@@ -15,7 +15,14 @@ public class Main {
         String plaintext ="ABE";
         int[] cipher = textToListofNumbers(plaintext);
         System.out.println(cipher);
-        System.out.println(Arrays.toString(cipher))
+        System.out.println(Arrays.toString(cipher));
+        int number = 1;
+        char letter = numberToLetter(number);
+        System.out.printf("Tallet %d bliver til bogstavet %c/n", number, letter);
+        int[] cipher = {1,2,5,11,1,20};
+        String plaintext = listOfNumbersToText(cipher);
+        System.out.println("Den krypterede tekst er: ");
+        System.out.println(plaintext);
         //int tal[] = konverterTekstTilTal(tekst);
         //String talListe = lavListeAfTalTilString(tal);
         //String line = line.toUpperCase();
@@ -66,7 +73,20 @@ public class Main {
          */
         String alfabetet = "ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ";
         int num = alfabetet.indexOf(letter);
-
-        return num;
+        return num
     }
+    public static String listOfNumbersToText(int[] numbers) {
+        Stringbuilder ? text="";
+        for(int number : numbers) {
+            //int number = numbers[i];
+            char letter = numberToLetter(number);
+            text = append(letter);
+        }
+        return text.toString();
+        }
+    public static char numberToLetter(int number) {
+        final String alfabetet = " ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ";
+        //char letter = alfabetet.charAt(number);
+        return alfabetet.charAt(number);
+        }
 }
